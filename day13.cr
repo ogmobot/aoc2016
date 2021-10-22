@@ -1,16 +1,7 @@
-def count_ones( n : Int32 )
-    total = 0
-    while n > 0
-        total += (n % 2)
-        n //= 2
-    end
-    return total
-end
-
 def wall_at? ( location : Tuple(Int32, Int32), fav )
     x, y = location
     return true if x < 0 || y < 0
-    return count_ones((x*x) + (3*x) + (2*x*y) + y + (y*y) + fav) % 2 == 1
+    return ((x*x) + (3*x) + (2*x*y) + y + (y*y) + fav).popcount % 2 == 1
 end
 
 def path_to (

@@ -27,4 +27,4 @@ while buffer_1.size + buffer_2.size < 16
     val += 1
 end
 puts buffer_1.join
-puts buffer_2.values_at(0, 1, 2, 3, 4, 5, 6, 7).join
+puts (0..7).map { |k| buffer_2[k] }.join

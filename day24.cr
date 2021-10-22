@@ -121,7 +121,5 @@ graph = maze2graph lines
 puts "Done." if DEBUG
 puts graph if DEBUG
 
-puts best_traversal 0, nil, graph
-puts best_traversal 0, 0, graph
-
-#2162 is too high
+puts best_traversal 0, false, graph
+puts best_traversal 0, true,  graph

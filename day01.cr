@@ -56,5 +56,5 @@ instructions.each do |inst|
     #puts "#{inst} => direction=#{direction} x=#{x} y=#{y}"
 end
 
-puts "Part 1: #{manhattan_distance(x, y)}"
-puts "Part 2: #{manhattan_distance(*target)}"
+puts manhattan_distance(x, y)
+puts manhattan_distance(*target)

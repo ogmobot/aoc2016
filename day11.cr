@@ -43,7 +43,6 @@ def allowed_state? (state : Array(Tuple(Element, Bool, Int32)))
             end
         end
     end
-    #puts "True"
     return true
 end
 
@@ -56,14 +55,14 @@ def uni_hash ( universe )
     state = universe[0]
     return (
         universe[1] +
-        8 * state.count { |item| item[1] && item[2] == 0 } +
-        8*8 * state.count { |item| !item[1] && item[2] == 0 } +
-        8*8*8 * state.count { |item| item[1] && item[2] == 1 } +
-        8*8*8*8 * state.count { |item| !item[1] && item[2] == 1 } +
-        8*8*8*8*8 * state.count { |item| item[1] && item[2] == 2 } +
-        8*8*8*8*8*8 * state.count { |item| !item[1] && item[2] == 2 } +
-        8*8*8*8*8*8*8 * state.count { |item| item[1] && item[2] == 3 } +
-        8*8*8*8*8*8*8*8 * state.count { |item| !item[1] && item[2] == 3 }
+        (8**1) * state.count { |item|  item[1] && item[2] == 0 } +
+        (8**2) * state.count { |item| !item[1] && item[2] == 0 } +
+        (8**3) * state.count { |item|  item[1] && item[2] == 1 } +
+        (8**4) * state.count { |item| !item[1] && item[2] == 1 } +
+        (8**5) * state.count { |item|  item[1] && item[2] == 2 } +
+        (8**6) * state.count { |item| !item[1] && item[2] == 2 } +
+        (8**7) * state.count { |item|  item[1] && item[2] == 3 } +
+        (8**8) * state.count { |item| !item[1] && item[2] == 3 }
     )
 end
 
